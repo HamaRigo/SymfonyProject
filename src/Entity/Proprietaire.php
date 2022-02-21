@@ -29,8 +29,9 @@ class Proprietaire
     private $numtel;
 
     /**
-     * @ORM\OneToMany(targetEntity=BienImmoblier::class, mappedBy="proprietaire"cascade={"remove"})
+     * @ORM\OneToMany(targetEntity=BienImmoblier::class, mappedBy="proprietaire")
      */
+    //cascade={"remove"}
     private $bienImmos;
 
     public function __construct()

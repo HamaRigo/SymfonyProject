@@ -26,7 +26,7 @@ class ClubController extends AbstractController
      */
     public function listClub(){
         $clubs=$this->getDoctrine()->getRepository(Club::class)->findAll();
-        return $this->render("Club/listClub.html.twig",array("tabClub"=>$clubs));
+        return $this->render("Club/listClub.html.twig",array("tabClub"=>$clubs->createView()));
     }
     /**
      * @Route("/showClub/{id}", name="showClub")
@@ -34,7 +34,7 @@ class ClubController extends AbstractController
     public function showClub($id){
 
         $club =$this->getDoctrine()->getRepository(Club::class)->find($id);
-        return $this->render("Club/showClub.html.twig",array("club"=>$club));
+        return $this->render("Club/showClub.html.twig",array("club"=>$club->createView()));
     }
     /**
      * @Route("/deleteClub/{id}", name="deleteClub")
